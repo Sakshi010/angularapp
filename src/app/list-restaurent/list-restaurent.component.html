@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Deleted</strong> Successfull ! ☺.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <table class="table table-bordered table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Mobile</th>
+        <th scope="col">E-Mail</th>
+        <th scopr="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let resto of collection">
+          <td>{{resto.id}}</td>
+          <td>{{resto.name}}</td>
+          <td>{{resto.address}}</td>
+          <td>{{resto.mobile}}</td>
+          <td>{{resto.email}}</td>
+          <td>
+            <a routerLink="/update/{{resto.id}}">
+              <i class="fa fa-pencil-square-o pr-3" aria-hidden="true" style="color:green;font-size:20px"></i>
+            </a>
+              <i (click)="deleteResto(resto.id)" class="fa fa-trash-o" aria-hidden="true" style="color: red;font-size:20px"></i>
+          </td>
+     </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+    font-weight: 600;
+}
+footer p{
+    margin: 0;
+}

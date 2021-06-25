@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="text-center mt-4 mb-4">Register User for Restaurent App</h1>
+
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>You are Registered Successfully!</strong>
+        <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close" (click)="closeAlert()">&times;</button>
+      </div>
+<form [formGroup]="createUser"(ngSubmit)="regUser()" >
+    <div class="mb-3">
+      <label  class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Enter Name" formControlName="firstName">     
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Name</label>
+      <input type="text" class="form-control" placeholder="Enter Name" formControlName="lastName">     
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Email </label>
+        <input type="text" class="form-control" formControlName="email" placeholder="Enter Email">     
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password">     
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

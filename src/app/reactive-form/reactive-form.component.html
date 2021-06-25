@@ -1,0 +1,75 @@
+<div class="container mt-4">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> 
+        <div class="form-group">
+        <label for="first-name" class="form-label">Last Name: </label>
+        <input type="text" formControlName="lastname" class="form-control"
+         >
+        <span class="text-danger"
+        *ngIf="(profileControl.lastname.touched || submitted) && profileControl.lastname.errors?.required">
+           Last Name is required
+       </span>
+       <span class="text-danger"
+       *ngIf="profileControl.lastname.touched && profileControl.lastname.errors?.pattern">
+      Last name should 1 Uppercase
+    
+   </span>
+        </div>
+        <div class="form-group">
+        <label for="first-name" class="form-label">First Name: </label>
+        <input type="text" formControlName="firstname" class="form-control">
+        <span class="text-danger"
+                *ngIf="(profileControl.firstname.touched || submitted) && profileControl.firstname.errors?.required">
+                Name is required
+            </span>
+        </div>
+        <div class="form-group">
+        <label for="Email" class="form-label">Email </label>
+        <input type="text" formControlName="email" class="form-control">
+        <span class="text-danger"
+                *ngIf="(profileControl.email.touched || submitted) && profileControl.email.errors?.required">
+                Email is required
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password">
+            <span class="text-danger"
+                *ngIf="(profileControl.password.touched || submitted) && profileControl.password.errors?.required">
+                Password is required
+            </span>
+            <span class="text-danger"
+                *ngIf="profileControl.password.touched && profileControl.password.errors?.invalidPassword">
+                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                letter and 1 number
+            </span>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmpassword">
+          
+            <span class="text-danger"
+            *ngIf="(profileControl.confirmpassword.touched || submitted) && profileControl.confirmpassword.errors?.required">
+                Confirm Password is required
+            </span>
+            <span class="text-danger"
+            *ngIf="profileControl.confirmpassword.touched && profileControl.confirmpassword.errors?.passwordMismatch">
+               Password Mismatch
+            </span>
+        </div>
+    <!-- <div formGroupName="address">
+        <h2>Address</h2>
+        <label for="street" class="form-label">Street: </label>
+        <input type="text" formControlName="street" class="form-control">
+        <label for="city" class="form-label">City: </label>
+        <input type="text" formControlName="city" class="form-control">
+        <label for="state" class="form-label">State: </label>
+        <input type="text" formControlName="state" class="form-control">
+        <label for="zip" class="form-label">ZIP: </label>
+        <input type="text" formControlName="zip" class="form-control">
+    </div> -->
+    <p>Form Status: {{ profileForm.status }}</p>
+    <button (click)="updateProfile()" class="btn btn-primary">UPDATE</button>
+    <p>Complete the form for enable button</p>
+    <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary">Submit</button>
+</form>
+</div>

@@ -1,0 +1,21 @@
+.product-meta .visually-hidden{
+	position: inherit;
+	height: auto;
+    width: auto;
+    font-size: 22px;
+}
+.product-item--price small{
+	display: none;
+}
+.section-header{
+	position: relative;
+}
+.section-header--right{
+	position: absolute;
+    right: 12px;
+    top: 12px;
+}
+class="m-hide"
+.m-hide{
+	display: none;
+}
